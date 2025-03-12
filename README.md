@@ -6,8 +6,25 @@ For now, plugins installed via the *ya* command should be ignored in this repo. 
 
 If you pulled this repo the first time on a "new" machine, run the following commands.
 
-´´´
+```
 ya pack -i
 ya pack -u
-´´´
+```
 to install and upgrade all packages.
+
+Path for configuration files (clone this repository there):
+
+```
+~/.config/yazi # Unix-like systems
+C:\Users\username\AppData\Roaming\yazi\config\ # Windows
+```
+
+## Usage with ubuntu
+
+Easiest way for me was to build from source.
+Packages recommended to be installed in addition to yazi with their respective debian-package names:
+
+```
+$ sudo apt install ffmpegthumbnailer p7zip-full p7zip-rar jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
+```
+

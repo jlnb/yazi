@@ -1,11 +1,11 @@
 [[manager.prepend_keymap]]
 on   = "p"
-run  = "plugin --sync smart-paste"
+run  = "plugin smart-paste"
 desc = "Paste into the hovered directory or CWD"
 
 [[manager.prepend_keymap]]
 on   = "e"
-run  = "plugin --sync smart-open-folder"
+run  = "plugin smart-open-folder"
 desc = "Open parent folder of file or folder itself in the file explorer"
 
 [[manager.prepend_keymap]]
