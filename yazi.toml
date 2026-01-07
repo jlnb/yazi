@@ -41,7 +41,7 @@ edit = [
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
 	{ run = '^open "$@"',                    desc = "Open", for = "macos" },
-	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+	{ run = 'start "%s"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
@@ -60,14 +60,14 @@ play = [
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 openfolder = [
-    { run = 'explorer %*', orphan = true, desc = "Open folder in explorer", for = "windows" },
+    { run = 'explorer "%1"', orphan = true, desc = "Open folder in explorer", for = "windows" },
     { run = 'open "$1"', orphan = true, desc = "Open folder in Finder", for = "macos" },
 ]
 
 [open]
 rules = [
 	# Folder
-	{ name = "*/", use = [ "openfolder", "edit", "open", "reveal" ] },
+	{ url = "*/", use = [ "openfolder", "edit", "open", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
@@ -82,8 +82,10 @@ rules = [
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
 	# Empty file
 	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
+	# PDF
+	{ mime = "application/pdf", use = [ "open", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "open", "reveal" ] },
+	{ name = "*", use = [ "open", "reveal", "openfolder" ] },
 ]
 
 [tasks]
