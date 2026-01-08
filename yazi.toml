@@ -41,7 +41,7 @@ edit = [
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
 	{ run = '^open "$@"',                    desc = "Open", for = "macos" },
-	{ run = 'start "%s"', orphan = true, desc = "Open", for = "windows" },
+	{ run = 'start "" "%s"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
