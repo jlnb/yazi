@@ -41,7 +41,7 @@ edit = [
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
 	{ run = '^open "$@"',                    desc = "Open", for = "macos" },
-	{ run = 'start "" "%s"', orphan = true, desc = "Open", for = "windows" },
+	{ run = 'start "" %1', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
@@ -66,6 +66,7 @@ openfolder = [
 
 [open]
 rules = [
+	{ url = "*.{pptx,ppt,docx,doc,xlsx,xls}", use = [ "open", "reveal" ] },
 	# Folder
 	{ url = "*/", use = [ "openfolder", "edit", "open", "reveal" ] },
 	# Text
@@ -74,9 +75,6 @@ rules = [
 	{ mime = "image/*", use = [ "open", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
-	# Archive
-	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
 	# JSON
 	{ mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
@@ -84,6 +82,11 @@ rules = [
 	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
 	# PDF
 	{ mime = "application/pdf", use = [ "open", "reveal" ] },
+	# Office OpenXML / legacy Office
+	{ name = "*.{pptx,ppt,docx,doc,xlsx,xls}", use = [ "open", "reveal" ] },
+	# Archive
+	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal", "openfolder" ] },
 ]
@@ -214,3 +217,4 @@ sort_translit  = false
 
 [log]
 enabled = false
+
