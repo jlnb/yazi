@@ -7,8 +7,8 @@ For now, plugins installed via the *ya* command should be ignored in this repo. 
 If you pulled this repo the first time on a "new" machine, run the following commands.
 
 ```
-ya pack -i
-ya pack -u
+ya pkg install
+ya pkg upgrade
 ```
 to install and upgrade all packages.
 
