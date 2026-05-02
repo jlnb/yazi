@@ -3,5 +3,7 @@ use = "dedukun/bookmarks"
 rev = "9ef1254"
 hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "4eede31"
+hash = "2f79b3c6afefef9b1c269edd38b45fab"
