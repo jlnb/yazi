@@ -1,9 +1,9 @@
 [[plugin.deps]]
 use = "dedukun/bookmarks"
 rev = "9ef1254"
-hash = "92fbb5483657fa7976cdf4e0104e18e0"
+hash = "fc77f2bd3aad78199fbe11b727b1954f"
 
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"
-rev = "4eede31"
-hash = "2f79b3c6afefef9b1c269edd38b45fab"
+rev = "e1ead7b"
+hash = "774b4f996ea82cf49797435c523d06aa"
